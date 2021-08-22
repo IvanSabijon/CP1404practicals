@@ -1,6 +1,21 @@
 MINIMUM_SET = 10
-password = input("Password: ")
-while len(password) < MINIMUM_SET:
-    print("Invalid password")
+
+
+def main():
+    password = get_password()
+    print_password(password)
+
+
+def get_password():
     password = input("Password: ")
-print("*" * len(password))
+    while len(password) < MINIMUM_SET:
+        print("Invalid password")
+        password = input("Password: ")
+    return password
+
+
+def print_password(password):
+    print("*" * len(password))
+
+
+main()
